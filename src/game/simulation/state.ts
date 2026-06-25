@@ -5,6 +5,7 @@ export interface GameState {
   playerDead: boolean;
   levelComplete: boolean;
   gameOver: boolean;
+  currentLevel: number;
 }
 
 export function createInitialState(): GameState {
@@ -12,9 +13,10 @@ export function createInitialState(): GameState {
     score: 0,
     coins: 0,
     lives: 3,
-    playerDead: false,
-    levelComplete: false,
-    gameOver: false,
+  playerDead: false,
+  levelComplete: false,
+  gameOver: false,
+  currentLevel: 0,
   };
 }
 
@@ -43,4 +45,5 @@ export function resetState(state: GameState): void {
   state.playerDead = false;
   state.levelComplete = false;
   state.gameOver = false;
+  state.currentLevel = 0;
 }
